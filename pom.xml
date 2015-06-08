@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wix.restaurants</groupId>
+    <artifactId>wix-restaurants-authentication-all</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Wix Restaurants Authentication</name>
+    <description>Wix Restaurants Authentication modules pom</description>
+	<url>https://github.com/wix/wix-restaurants-authentication</url>
+	
+    <modules>
+        <module>wix-restaurants-authentication-api</module>
+        <module>wix-restaurants-authentication-client</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <name>Danny Leshem</name>
+            <email>dannyl@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Ohad Raz</name>
+            <email>ohadr@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Yoav Amit</name>
+            <email>yoava@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+	</developers>
+	
+	<issueManagement>
+		<url>https://github.com/wix/wix-restaurants-authentication/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>	
+	
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>	
+	
+	<scm>
+		<url>https://github.com/wix/wix-restaurants-authentication</url>
+		<connection>scm:git:git://github.com/wix/wix-restaurants-authentication.git</connection>
+		<developerConnection>scm:git:git@github.com:wix/wix-restaurants-authentication.git</developerConnection>
+	</scm>	
+	
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<com.fasterxml.jackson.version>2.5.3</com.fasterxml.jackson.version>
+		<com.wix.restaurants.jsonclient.version>1.2.0</com.wix.restaurants.jsonclient.version>
+    </properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>	
+	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>			
+        </plugins>
+    </build>
+</project>
