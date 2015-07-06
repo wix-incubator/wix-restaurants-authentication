@@ -31,7 +31,26 @@ public class User implements Serializable, Cloneable  {
 	public Object clone() {
     	return new User(ns, id);
 	}
-	
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		User user = (User) o;
+
+		if (ns != null ? !ns.equals(user.ns) : user.ns != null) return false;
+		return !(id != null ? !id.equals(user.id) : user.id != null);
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = ns != null ? ns.hashCode() : 0;
+		result = 31 * result + (id != null ? id.hashCode() : 0);
+		return result;
+	}
+
     @JsonInclude(Include.NON_NULL)
 	public String ns;
     
