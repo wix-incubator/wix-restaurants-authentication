@@ -4,7 +4,7 @@
 
     <groupId>com.wix.restaurants</groupId>
     <artifactId>wix-restaurants-authentication-client</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Wix Restaurants Authentication Client</name>
     <description>Wix Restaurants Authentication Client</description>
@@ -36,7 +36,7 @@
     <parent>
         <groupId>com.wix.restaurants</groupId>
         <artifactId>wix-restaurants-authentication-all</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>com.wix.restaurants</groupId>
 			<artifactId>wix-restaurants-authentication-api</artifactId>
-			<version>1.0.1</version>
+			<version>1.1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.wix.restaurants</groupId>
