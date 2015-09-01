@@ -10,7 +10,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.wix.restaurants</groupId>
   <artifactId>wix-restaurants-authentication-client</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
