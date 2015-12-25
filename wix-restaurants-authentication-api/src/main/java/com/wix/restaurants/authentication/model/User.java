@@ -18,7 +18,9 @@ public class User implements Serializable, Cloneable  {
     public static final String NS_WIX_SITE = "com.wix.sites";
     /** OpenRest users, id is the user's email. */
 	public static final String NS_OPENREST = "com.openrest";
-	
+	/** Google OpenID Connect, id is the user's email. */
+	public static final String NS_GOOGLE = "com.google";
+
     /** Default constructor for JSON deserialization. */
 	public User() {}
 	
