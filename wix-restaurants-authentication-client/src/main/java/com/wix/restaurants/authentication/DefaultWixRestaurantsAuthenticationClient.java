@@ -2,6 +2,7 @@ package com.wix.restaurants.authentication;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.wix.restaurants.authentication.exceptions.ExceptionsTranslator;
 import com.wix.restaurants.authentication.exceptions.InternalException;
 import com.wix.restaurants.authentication.model.*;
@@ -13,6 +14,44 @@ public class DefaultWixRestaurantsAuthenticationClient implements WixRestaurants
     private final ExceptionsTranslator exceptionsTranslator = new ExceptionsTranslator();
     private final JsonClient jsonClient;
     private final String endpointUrl;
+
+    public static class Builder {
+        private HttpRequestFactory requestFactory = new NetHttpTransport().createRequestFactory();
+        private int connectTimeout = 0;
+        private int readTimeout = 0;
+        private int numberOfRetries = 0;
+        private String endpointUrl = Endpoints.PRODUCTION;
+
+        public Builder setRequestFactory(HttpRequestFactory requestFactory) {
+            this.requestFactory = requestFactory;
+            return this;
+        }
+
+        public Builder setConnectTimeout(int connectTimeout) {
+            this.connectTimeout = connectTimeout;
+            return this;
+        }
+
+        public Builder setReadTimeout(int readTimeout) {
+            this.readTimeout = readTimeout;
+            return this;
+        }
+
+        public Builder setNumberOfRetries(int numberOfRetries) {
+            this.numberOfRetries = numberOfRetries;
+            return this;
+        }
+
+        public Builder setEndpointUrl(String endpointUrl) {
+            this.endpointUrl = endpointUrl;
+            return this;
+        }
+
+        public DefaultWixRestaurantsAuthenticationClient build() {
+            return new DefaultWixRestaurantsAuthenticationClient(
+                    requestFactory, connectTimeout, readTimeout, numberOfRetries, endpointUrl);
+        }
+    }
 
     public DefaultWixRestaurantsAuthenticationClient(HttpRequestFactory requestFactory, Integer connectTimeout,
                                                      Integer readTimeout, Integer numberOfRetries, String endpointUrl) {
