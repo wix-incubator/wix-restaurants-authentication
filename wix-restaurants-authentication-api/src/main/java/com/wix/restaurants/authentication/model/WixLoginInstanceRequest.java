@@ -12,13 +12,9 @@ public class WixLoginInstanceRequest extends Request {
     /** Default constructor for JSON deserialization. */
     public WixLoginInstanceRequest() {}
 
-    public WixLoginInstanceRequest(String appKey, String instance) {
-        this.appKey = appKey;
+    public WixLoginInstanceRequest(String instance) {
         this.instance = instance;
     }
-
-    @JsonInclude(Include.NON_NULL)
-    public String appKey;
 
     @JsonInclude(Include.NON_NULL)
     public String instance;
