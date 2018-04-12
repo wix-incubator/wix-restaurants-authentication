@@ -10,17 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class User implements Serializable, Cloneable  {
 	private static final long serialVersionUID = 1L;
 
-    /** Facebook users, id is the Facebook user id. */
-	public static final String NS_FACEBOOK = "com.facebook";
-    /** Wix users, id is the Wix user id. */
-	public static final String NS_WIX = "com.wix";
-    /** Wix websites, id is the Wix site id. */
-    public static final String NS_WIX_SITE = "com.wix.sites";
-    /** OpenRest users, id is the user's email. */
-	public static final String NS_OPENREST = "com.openrest";
-	/** Google OpenID Connect, id is the user's email. */
-	public static final String NS_GOOGLE = "com.google";
-
     /** Default constructor for JSON deserialization. */
 	public User() {}
 	
@@ -53,6 +42,7 @@ public class User implements Serializable, Cloneable  {
 		return result;
 	}
 
+	/** @see Namespaces */
     @JsonInclude(Include.NON_NULL)
 	public String ns;
     
