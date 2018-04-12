@@ -94,6 +94,17 @@ public class DefaultWixRestaurantsAuthenticationClient implements WixRestaurants
     }
 
     @Override
+    public LoginResponse loginInstanceWithWixInstance(String instance) {
+        final WixInstanceLoginInstanceRequest wixInstanceLoginInstanceRequest = new WixInstanceLoginInstanceRequest();
+        wixInstanceLoginInstanceRequest.instance = instance;
+
+        final LoginResponse wixInstanceLoginInstanceResponse = request(
+                wixInstanceLoginInstanceRequest, new TypeReference<Response<LoginResponse>>() {});
+
+        return wixInstanceLoginInstanceResponse;
+    }
+
+    @Override
     public User authenticate(String accessToken) {
         final AuthenticateRequest authenticateRequest = new AuthenticateRequest();
         authenticateRequest.accessToken = accessToken;

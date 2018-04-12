@@ -16,6 +16,7 @@ import java.io.Serializable;
 	@Type(value = AuthenticateRequest.class, name = AuthenticateRequest.TYPE),
 	@Type(value = FacebookLoginRequest.class, name = FacebookLoginRequest.TYPE),
 	@Type(value = WixLoginInstanceRequest.class, name = WixLoginInstanceRequest.TYPE),
+	@Type(value = WixInstanceLoginInstanceRequest.class, name = WixInstanceLoginInstanceRequest.TYPE),
 	@Type(value = OpenrestLoginRequest.class, name = OpenrestLoginRequest.TYPE),
     @Type(value = GoogleLoginRequest.class, name = GoogleLoginRequest.TYPE)
 })

@@ -7,6 +7,7 @@ public interface WixRestaurantsAuthenticationClient {
     LoginResponse loginWithFacebook(String fbAccessToken);
     LoginResponse loginWithOpenrest(String username, String password);
     LoginResponse loginWithWixInstance(String instance);
+    LoginResponse loginInstanceWithWixInstance(String instance);
 
     User authenticate(String accessToken);
 }
