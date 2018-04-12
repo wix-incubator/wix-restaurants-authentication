@@ -1,10 +1,11 @@
 package com.wix.restaurants.authentication.model;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Serializable, Cloneable  {
@@ -19,28 +20,31 @@ public class User implements Serializable, Cloneable  {
 	}
 	
     @Override
-	public Object clone() {
+	public User clone() {
     	return new User(ns, id);
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(ns, user.ns) &&
+                Objects.equals(id, user.id);
+    }
 
-		User user = (User) o;
+    @Override
+    public int hashCode() {
+        return Objects.hash(ns, id);
+    }
 
-		if (ns != null ? !ns.equals(user.ns) : user.ns != null) return false;
-		return !(id != null ? !id.equals(user.id) : user.id != null);
-
-	}
-
-	@Override
-	public int hashCode() {
-		int result = ns != null ? ns.hashCode() : 0;
-		result = 31 * result + (id != null ? id.hashCode() : 0);
-		return result;
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "ns='" + ns + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 
 	/** @see Namespaces */
     @JsonInclude(Include.NON_NULL)
