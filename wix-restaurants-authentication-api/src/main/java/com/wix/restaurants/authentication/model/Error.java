@@ -1,10 +1,11 @@
 package com.wix.restaurants.authentication.model;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Error implements Serializable {
@@ -25,7 +26,29 @@ public class Error implements Serializable {
     	this.code = code;
     	this.message = message;
     }
-    
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Error error = (Error) o;
+		return Objects.equals(code, error.code) &&
+				Objects.equals(message, error.message);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(code, message);
+	}
+
+	@Override
+	public String toString() {
+		return "Error{" +
+				"code='" + code + '\'' +
+				", message='" + message + '\'' +
+				'}';
+	}
+
     /** Error code, one of the above. */
     @JsonInclude(Include.NON_NULL)
     public String code;
@@ -33,9 +56,4 @@ public class Error implements Serializable {
     /** Detailed error information for debugging. */
     @JsonInclude(Include.NON_NULL)
     public String message;
-    
-	@Override
-	public String toString() {
-		return code + "|" + message;
-	}
 }

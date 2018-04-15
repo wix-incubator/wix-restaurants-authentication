@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Response<T> implements Serializable {
@@ -32,5 +33,27 @@ public class Response<T> implements Serializable {
     @SuppressWarnings("rawtypes")
 	public static Response fromNullValue() {
         return new Response();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Response<?> response = (Response<?>) o;
+        return Objects.equals(error, response.error) &&
+                Objects.equals(value, response.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(error, value);
+    }
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "error=" + error +
+                ", value=" + value +
+                '}';
     }
 }
