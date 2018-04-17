@@ -21,10 +21,10 @@ public class Namespaces {
     /** Recipient of Wix Restaurants order share, id is the order id. */
     public static final String wixRestaurantsOrdersShares = "com.wix.restaurants.orders.shares";
 
-    /** Owner (customer) of a Wix Restaurants reservation, id is the order id. */
+    /** Owner (customer) of a Wix Restaurants reservation, id is the reservation id. */
     public static final String wixRestaurantsReservationsOwners = "com.wix.restaurants.reservations.owners";
 
-    /** Recipient of Wix Restaurants reservation share, id is the order id. */
+    /** Recipient of Wix Restaurants reservation share, id is the reservation id. */
     public static final String wixRestaurantsReservationsShares = "com.wix.restaurants.reservations.shares";
 
     /** OpenRest users, id is the user's email. */
