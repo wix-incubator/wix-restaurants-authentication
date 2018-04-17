@@ -105,6 +105,18 @@ public class DefaultWixRestaurantsAuthenticationClient implements WixRestaurants
     }
 
     @Override
+    public LoginResponse impersonate(String accessToken, User user) {
+        final ImpersonateRequest impersonateRequest = new ImpersonateRequest();
+        impersonateRequest.accessToken = accessToken;
+        impersonateRequest.user = user;
+
+        final LoginResponse impersonateResponse = request(
+                impersonateRequest, new TypeReference<Response<LoginResponse>>() {});
+
+        return impersonateResponse;
+    }
+
+    @Override
     public User authenticate(String accessToken) {
         final AuthenticateRequest authenticateRequest = new AuthenticateRequest();
         authenticateRequest.accessToken = accessToken;

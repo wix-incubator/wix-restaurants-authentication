@@ -8,6 +8,7 @@ public interface WixRestaurantsAuthenticationClient {
     LoginResponse loginWithOpenrest(String username, String password);
     LoginResponse loginWithWixInstance(String instance);
     LoginResponse loginInstanceWithWixInstance(String instance);
+    LoginResponse impersonate(String accessToken, User user);
 
     User authenticate(String accessToken);
 }

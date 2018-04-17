@@ -18,7 +18,8 @@ import java.io.Serializable;
 	@Type(value = WixLoginInstanceRequest.class, name = WixLoginInstanceRequest.TYPE),
 	@Type(value = WixInstanceLoginInstanceRequest.class, name = WixInstanceLoginInstanceRequest.TYPE),
 	@Type(value = OpenrestLoginRequest.class, name = OpenrestLoginRequest.TYPE),
-    @Type(value = GoogleLoginRequest.class, name = GoogleLoginRequest.TYPE)
+    @Type(value = GoogleLoginRequest.class, name = GoogleLoginRequest.TYPE),
+	@Type(value = ImpersonateRequest.class, name = ImpersonateRequest.TYPE)
 })
 public abstract class Request implements Serializable {
     private static final long serialVersionUID = 1L;
