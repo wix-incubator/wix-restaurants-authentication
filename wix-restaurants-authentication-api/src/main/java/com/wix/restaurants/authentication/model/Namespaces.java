@@ -15,6 +15,18 @@ public class Namespaces {
     /** Wix app instances, id is the Wix instance id. */
     public static final String wixInstances = "com.wix.instances";
 
+    /** Owner (customer) of a Wix Restaurants order, id is the order id. */
+    public static final String wixRestaurantsOrdersOwners = "com.wix.restaurants.orders.owners";
+
+    /** Recipient of Wix Restaurants order share, id is the order id. */
+    public static final String wixRestaurantsOrdersShares = "com.wix.restaurants.orders.shares";
+
+    /** Owner (customer) of a Wix Restaurants reservation, id is the order id. */
+    public static final String wixRestaurantsReservationsOwners = "com.wix.restaurants.reservations.owners";
+
+    /** Recipient of Wix Restaurants reservation share, id is the order id. */
+    public static final String wixRestaurantsReservationsShares = "com.wix.restaurants.reservations.shares";
+
     /** OpenRest users, id is the user's email. */
     public static final String openrest = "com.openrest";
 
