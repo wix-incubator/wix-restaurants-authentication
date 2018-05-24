@@ -3,39 +3,75 @@ package com.wix.restaurants.authentication.model;
 public class Namespaces {
     private Namespaces() {}
 
-    /** Facebook users, id is the Facebook user id. */
+    /**
+     * Facebook users.
+     * Identifier: Facebook user ID, e.g. "4" for Mark Zuckerberg.
+     */
     public static final String facebook = "com.facebook";
 
-    /** Wix users, id is the Wix user id. */
+    /**
+     * Wix users.
+     * Identifier: Wix user ID (GUID).
+     */
     public static final String wix = "com.wix";
 
-    /** Wix websites, id is the Wix site id. */
+    /**
+     * Wix websites.
+     * Identifier: Wix site ID (GUID).
+     */
     public static final String wixSites = "com.wix.sites";
 
-    /** Wix app instances, id is the Wix instance id. */
+    /**
+     * Wix app instances.
+     * Identifier: Wix instance ID (GUID).
+     */
     public static final String wixInstances = "com.wix.instances";
 
-    /** Owner (customer) of a Wix Restaurants order, id is the order id. */
+    /**
+     * Owners (customers) of a Wix Restaurants order.
+     * Identifier: order ID.
+     */
     public static final String wixRestaurantsOrdersOwners = "com.wix.restaurants.orders.owners";
 
-    /** Recipient of Wix Restaurants order share, id is the order id. */
+    /**
+     * Recipients of Wix Restaurants order share.
+     * Identifier: order ID.
+     */
     public static final String wixRestaurantsOrdersShares = "com.wix.restaurants.orders.shares";
 
-    /** Owner (customer) of a Wix Restaurants reservation, id is the reservation id. */
+    /**
+     * Owners (customers) of a Wix Restaurants reservation.
+     * Identifier: reservation ID.
+     */
     public static final String wixRestaurantsReservationsOwners = "com.wix.restaurants.reservations.owners";
 
-    /** Recipient of Wix Restaurants reservation share, id is the reservation id. */
+    /**
+     * Recipients of Wix Restaurants reservation share.
+     * Identifier: reservation ID.
+     */
     public static final String wixRestaurantsReservationsShares = "com.wix.restaurants.reservations.shares";
 
-    /** OpenRest users, id is the user's email. */
+    /**
+     * Legacy OpenRest users.
+     * Identifier: the user's email in lowercase, e.g. "example@gmail.com".
+     */
     public static final String openrest = "com.openrest";
 
-    /** Google OpenID Connect, id is the user's email. */
+    /**
+     * Google OpenID Connect.
+     * Identifier: Google user ID (email) in lowercase, e.g. "example@gmail.com".
+     */
     public static final String google = "com.google";
 
-    /** Phone number owner, id is the phone in <a href="https://en.wikipedia.org/wiki/E.164">E.164 format</a>. */
+    /**
+     * Phone number owners.
+     * Identifier: phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164 format</a>, e.g. "+12024561111".
+     */
     public static final String phone = "tel";
 
-    /** Email address owner, id is the email address in lowercase. */
+    /**
+     * Email address owners.
+     * Identifier: email address in lowercase, e.g. "example@example.org".
+     */
     public static final String email = "email";
 }
