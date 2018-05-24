@@ -32,4 +32,10 @@ public class Namespaces {
 
     /** Google OpenID Connect, id is the user's email. */
     public static final String google = "com.google";
+
+    /** Phone number owner, id is the phone in <a href="https://en.wikipedia.org/wiki/E.164">E.164 format</a>. */
+    public static final String phone = "tel";
+
+    /** Email address owner, id is the email address in lowercase. */
+    public static final String email = "email";
 }
