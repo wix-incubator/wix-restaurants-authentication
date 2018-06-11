@@ -63,8 +63,9 @@
 	</licenses>	
 
     <properties>
-		<com.fasterxml.jackson.version>2.9.5</com.fasterxml.jackson.version>
-		<com.wix.restaurants.jsonclient.version>1.9.0</com.wix.restaurants.jsonclient.version>
+        <com.fasterxml.jackson.version>2.9.5</com.fasterxml.jackson.version>
+        <com.wix.restaurants.json.version>1.7.0</com.wix.restaurants.json.version>
+        <com.wix.rest.rest-rfc7807.version>1.0.0</com.wix.rest.rest-rfc7807.version>
     </properties>
 
 

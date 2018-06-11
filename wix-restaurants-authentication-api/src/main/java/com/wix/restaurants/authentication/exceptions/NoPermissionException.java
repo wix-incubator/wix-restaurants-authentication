@@ -1,6 +1,6 @@
 package com.wix.restaurants.authentication.exceptions;
 
-public class NoPermissionException extends AuthenticationException {
+public class NoPermissionException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     public NoPermissionException(String message, Throwable cause) {

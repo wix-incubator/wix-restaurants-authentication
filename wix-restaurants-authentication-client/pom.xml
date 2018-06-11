@@ -43,10 +43,15 @@
 			<artifactId>wix-restaurants-authentication-api</artifactId>
 			<version>1.9.0-SNAPSHOT</version>
 		</dependency>
+        <dependency>
+            <groupId>com.wix.rest</groupId>
+            <artifactId>rest-rfc7807-client</artifactId>
+            <version>${com.wix.rest.rest-rfc7807.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>com.wix.restaurants</groupId>
-			<artifactId>wix-restaurants-jsonclient</artifactId>
-			<version>${com.wix.restaurants.jsonclient.version}</version>
+			<artifactId>wix-restaurants-json</artifactId>
+			<version>${com.wix.restaurants.json.version}</version>
 		</dependency>
 
         <!-- Test Dependencies -->

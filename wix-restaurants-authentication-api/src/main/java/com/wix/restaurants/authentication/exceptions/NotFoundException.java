@@ -1,6 +1,6 @@
 package com.wix.restaurants.authentication.exceptions;
 
-public class NotFoundException extends AuthenticationException {
+public class NotFoundException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     public NotFoundException(String message, Throwable cause) {

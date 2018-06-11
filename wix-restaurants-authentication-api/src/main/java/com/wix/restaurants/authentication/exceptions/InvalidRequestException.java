@@ -1,6 +1,6 @@
 package com.wix.restaurants.authentication.exceptions;
 
-public class InvalidRequestException  extends AuthenticationException {
+public class InvalidRequestException  extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     public InvalidRequestException(String message, Throwable cause) {
