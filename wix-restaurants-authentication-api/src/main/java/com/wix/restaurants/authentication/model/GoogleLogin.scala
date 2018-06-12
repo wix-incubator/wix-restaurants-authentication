@@ -1,3 +1,3 @@
 package com.wix.restaurants.authentication.model
 
-class GoogleLogin(clientId: String, idToken: String)
+case class GoogleLogin(clientId: String, idToken: String)

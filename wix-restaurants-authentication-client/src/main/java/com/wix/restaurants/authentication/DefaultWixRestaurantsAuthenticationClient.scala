@@ -26,6 +26,11 @@ class DefaultWixRestaurantsAuthenticationClient(endpoint: String = "https://auth
     Await.result(client.execute(request) withResult[LoginResponse](), actualReadTimeout)
   }
 
+  override def loginWithGoogle(clientId: String, idToken: String): LoginResponse = {
+    val request = Post(s"$endpoint/com.google/access_token", Json.stringify(GoogleLogin(clientId, idToken)))
+    Await.result(client.execute(request) withResult[LoginResponse](), actualReadTimeout)
+  }
+
   override def loginWithOpenrest(username: String, password: String): LoginResponse = {
     val request = Post(s"$endpoint/com.openrest/access_token", Json.stringify(OpenrestLogin(username, password)))
     Await.result(client.execute(request) withResult[LoginResponse](), actualReadTimeout)

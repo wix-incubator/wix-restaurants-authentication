@@ -5,6 +5,7 @@ import com.wix.restaurants.authentication.model.User;
 
 public interface WixRestaurantsAuthenticationClient {
     LoginResponse loginWithFacebook(String fbAccessToken);
+    LoginResponse loginWithGoogle(String clientId, String idToken);
     LoginResponse loginWithOpenrest(String username, String password);
     LoginResponse loginWithWixInstance(String instance);
     LoginResponse loginInstanceWithWixInstance(String instance);
