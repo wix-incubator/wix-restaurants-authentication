@@ -66,10 +66,9 @@ private object ExceptionTranslator {
       case "https://www.wixrestaurants.com/errors/internal" => new InternalException(errorResponse.detail.orNull)
       case "https://www.wixrestaurants.com/errors/authentication" => new AuthenticationException(errorResponse.detail.orNull)
       case "https://www.wixrestaurants.com/errors/invalid_data" => new InvalidDataException(errorResponse.detail.orNull)
-      case "https://www.wixrestaurants.com/errors/forbidden" => new NoPermissionException(errorResponse.detail.orNull)
-      case "https://www.wixrestaurants.com/errors/not_found" => new NotFoundException(errorResponse.detail.orNull)
+      case "https://www.wixrestaurants.com/errors/forbidden" => new ForbiddenException(errorResponse.detail.orNull)
       case "https://www.wixrestaurants.com/errors/not_secure" => new SecurityException(errorResponse.detail.orNull)
-      case _ => new AuthenticationException(s"Type: '${errorResponse.`type`}'${errorResponse.detail.map(detail => s", Detail: '$detail'").getOrElse("")}")
+      case _ => new RuntimeException(s"Type: '${errorResponse.`type`}'${errorResponse.detail.map(detail => s", Detail: '$detail'").getOrElse("")}")
     }
   }
 }
