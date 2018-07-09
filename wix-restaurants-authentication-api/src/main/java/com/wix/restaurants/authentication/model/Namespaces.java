@@ -10,6 +10,12 @@ public class Namespaces {
     public static final String facebook = "com.facebook";
 
     /**
+     * Facebook pages.
+     * Identifier: Facebook page ID, e.g. "20531316728" for Facebook's own facebook page.
+     */
+    public static final String facebookPages = "com.facebook.pages";
+
+    /**
      * Wix users.
      * Identifier: Wix user ID (GUID).
      */
